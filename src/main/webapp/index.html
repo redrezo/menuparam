@@ -1,0 +1,32 @@
+<lift:surround with="default" at="content">
+		<h2></h2>
+		<p>
+      <lift:helloWorld.howdy>
+        <span>Welcome to menuparam at <b:time/></span>
+      </lift:helloWorld.howdy>
+    </p>
+    <h2>Example A</h2>
+    <div>
+	    <p>Links: <a href="/A/page1">Page 1</a>, <a href="/A/page2">Page 2</a></p>
+	    <p>
+	    	This example has feature a, b and c's CalcValue set to () => page.currentValue. Therefore all feature links are visible and point to the correct url.
+	    </p><p>
+	    	However when you click one of the feature links page.currentValue gets empty and so only the clicked feature Menu entry will remain.
+	    </p>
+	    <p>
+	    	The behavior I'd like to achieve is that on each feature page all 4 items are visible
+	    </p>
+    </div>
+    
+    <h2>Example B</h2>
+    <div>
+	    <p>Links: <a href="/B/page1">Page 1</a>, <a href="/B/page2">Page 2</a></p>
+	    <p>
+	    	This time i tried with to use the currentVal of the page, feature b and feature c to calc the value of feature a. This leads to the wanted behavior for feature a: The link is on all other pages visible.
+	    </p><p>
+	    	However i cannot do this for the other loc's as well. Since it triggers some kind of endless calculation -> stack overflow
+	    	to reproduce this switch to the stackoverflow branch or modify Boot.scala:69-70
+	    </p>
+    </div>
+</lift:surround>
+
