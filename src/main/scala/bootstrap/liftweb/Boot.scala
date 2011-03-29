@@ -66,8 +66,8 @@ object SitemapHelper {
 		}
 	}
 	
-	val bfbcalc = () => bpage.currentValue
-//	val bfbcalc = bfbcalcLoop
+//	val bfbcalc = () => bpage.currentValue
+	val bfbcalc = bfbcalcLoop
 	
 	val bpageText = new LinkText[Page]( p => Text("(B) Page " + p.id) )
 	val bpage = Menu.param[Page]("bpid", bpageText, pageParser _, pageEncoder _) / "B" / * >> 
